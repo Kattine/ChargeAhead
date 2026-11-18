@@ -1,7 +1,7 @@
 """ChargeAhead v2: transparent targets, matched backtests and source audits.
 
 Run with `python run_analysis.py` from the project root. No network calls.
-All findings are exploratory on user-supplied extracts, not a real-time trial.
+All findings are exploratory on user-supplied extracts.
 """
 from pathlib import Path
 import hashlib
