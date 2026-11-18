@@ -1,0 +1,3 @@
+model,MASE,interpretation
+Persistence (reference),1.0,"baseline, equals naive by definition"
+Baidu NEV attention,0.7340078994399151,MASE < 1 formally beats the naive baseline

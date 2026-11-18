@@ -1,0 +1,5 @@
+pair,best_lag,corr_at_best_lag,n_at_best_lag
+channel_gap_vs_index_level,0,0.8517076814887985,44
+channel_gap_vs_dIndex,5,0.43727202104134366,39
+dChannel_vs_dIndex,0,0.4986102104290561,43
+ratio_vs_index_level,1,0.8200714509022482,43

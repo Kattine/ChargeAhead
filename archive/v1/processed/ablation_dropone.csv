@@ -1,0 +1,6 @@
+variant,dropped,n,mae_persist,mae_baidu,dir_persist,dir_baidu,mase,mae_improvement_pct
+FULL (all 4 components),none,19,0.0873,0.0641,0.7368,0.6842,0.734,26.5992
+DROP C1_nev_penetration,C1_nev_penetration,19,0.0855,0.0638,0.7368,0.4737,0.7456,25.4368
+DROP C2_ice_decline,C2_ice_decline,19,0.0962,0.0782,0.6316,0.6316,0.813,18.703
+DROP C3_bev_share_nev,C3_bev_share_nev,19,0.1033,0.0687,0.7368,0.6842,0.6652,33.4836
+DROP C4_bev_a0_plus_a,C4_bev_a0_plus_a,19,0.0817,0.0576,0.7368,0.7895,0.7052,29.4752

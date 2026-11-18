@@ -1,0 +1,4 @@
+regime,n_months,mae_baidu,mae_persist,dir_baidu,dir_persist,verdict
+2025 full year,11,0.0397,0.0672,0.55,0.64,FAIL
+2026 Q1 (Spring Festival),3,0.1588,0.2046,0.67,0.67,PASS
+2026 Q2 to Aug (post-SF),5,0.0609,0.061,1.0,1.0,PASS

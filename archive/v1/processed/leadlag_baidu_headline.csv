@@ -1,0 +1,10 @@
+signal,best_lag,corr_at_best_lag,n_at_best_lag
+att_nev_overall,-3,-0.36278802137659394,41
+att_brand_bev_pure,-2,-0.6829973848741105,42
+att_brand_erev_lead,-3,-0.5570628649450058,41
+att_brand_phev_lead,4,-0.6119722995784191,40
+att_model_top,-2,-0.19065316063602455,42
+att_pw_erev_cat,4,0.3420310201617138,40
+att_pw_bev_cat,-6,0.3356605435914769,38
+att_pw_phev_cat,2,-0.4274101378595949,42
+att_pw_ice_cat,3,-0.5849165582998265,41

@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+*.pdf.bak
+outputs/deck/slide-*.jpg
+outputs/deck/grid.jpg
+
+
+# Keep notebooks, project notes, and datasets local
+/notebooks/*
+!/notebooks/.gitkeep
+
+/docs/*
+!/docs/.gitkeep
+
+/data/raw/*
+!/data/raw/.gitkeep
+
+/data/processed/*
+!/data/processed/.gitkeep
+
+# Local environment and caches
+.DS_Store
+__pycache__/
+.venv/
+.env
+

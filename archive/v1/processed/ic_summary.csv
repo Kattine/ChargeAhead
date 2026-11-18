@@ -1,0 +1,3 @@
+signal,ic_full_sample,ir_grinold_proxy_N20,interpretation
+Baidu NEV attention,-0.32515630444906835,-1.4541432001214682,IC > 0.05 is professionally interesting; IR scales with sqrt(N) breadth
+Persistence (reference),0.0941181639312107,0.4209092249353119,serial-correlation baseline

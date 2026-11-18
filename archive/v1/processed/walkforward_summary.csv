@@ -1,0 +1,3 @@
+model,mae,direction_accuracy,n_forecasts
+Persistence,0.08727014042999108,0.7368421052631579,19
+Baidu NEV attention (walk-forward),0.06405697246084416,0.6842105263157895,19

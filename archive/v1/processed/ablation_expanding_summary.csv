@@ -1,0 +1,2 @@
+mean_abs_gap,max_abs_gap,max_gap_month,corr_full_vs_expanding,note
+0.22462398921354956,0.5919831223628691,2023-02-01,0.6704114366833421,Expanding-window min-max removes look-ahead; small gap = leakage was limited
