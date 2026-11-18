@@ -12,8 +12,6 @@ What is being evaluated:
       (B) channel-signal model     \hat{dIdx_t} = alpha + beta * channel_signal_{t-1}
       (C) seasonal naive baseline  \hat{dIdx_t} = dIdx_{t-12}
 
-Note: Baidu Search Index data has not been collected yet, so attention-based signals
-      are deliberately left out of this stage. They will enter next.
 """
 
 from pathlib import Path
