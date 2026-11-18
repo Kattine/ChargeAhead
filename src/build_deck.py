@@ -1,17 +1,5 @@
 """
 ChargeAhead: build the mid-semester review deck.
-
-- 10 slides, 10 minute hard stop, solo presenter
-- Palette and typography match the Idea Pitch deck
-- Covers all mandatory topics from the guidelines (marked * below):
-    Project Overview*          slide 2
-    Progress Overview*         slide 3
-    Customer Discovery         slide 7 note
-    Data Collection*           slide 4
-    Model Development*         slide 5 + 6
-    Evaluation Metrics*        slide 7
-    Next Steps*                slide 10
-    Challenges & Risks*        slide 9
 """
 
 from pathlib import Path
