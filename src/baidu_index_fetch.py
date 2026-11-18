@@ -3,10 +3,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 from qdata.baidu_index import get_search_index
 
-# COOKIES = "你的百度指数Cookie"
-COOKIES = "BIDUPSID=F2B2961085D25A0D082B589AF9C9982D; PSTM=1770601610; BAIDUID=9BC8CAFCDC1291AD6202BBA4BA3E4894:FG=1; BAIDUID_BFESS=9BC8CAFCDC1291AD6202BBA4BA3E4894:FG=1; ZFY=ccIrd4XNS:ANDEoeoaSaqGoGCgCVppxOD0pVQTh5xiO8:C; BDUSS=mxCb0t6TUVwdjVsTklLZElhTlM5WFdjVmdIck53dUFZY1d0clk4REV-Mm1xNzFwSVFBQUFBJCQAAAAAAAAAAAEAAADD369xxM~H5cuutvkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKYelmmmHpZpY; H_PS_PSSID=63141_67861_67890_68053_67986_68004_68149_68146_68144_68152_68140_68165_68230_68262_68266_68296_68308_68353_68370_68353_68419_68432_68447_68467_68539_68537_68546_68558_68506_68518_68621_68612_68604_68705_68680_68671_68714_68734_68726_68544_68799; H_WISE_SIDS=63141_67861_67986_68004_68149_68146_68144_68152_68140_68165_68230_68266_68296_68370_68419_68447_68539_68546_68558_68506_68518_68591_68616_68621_68612_68604_68705_68680_68671_68714_68734_68726_68544_68799_68872_68883_68902_68832_68922_68993_69000_69010_69017_69016_69021; HMACCOUNT=49256AD458ED270E; Hm_up_d101ea4d2a5c67dab98251f0b5de24dc=%7B%22uid_%22%3A%7B%22value%22%3A%221907351491%22%2C%22scope%22%3A1%7D%7D; SIGNIN_UC=70a2711cf1d3d9b1a82d2f87d633bd8a05395454900cYIqWIVgIEJIzpJxyeKAZUk3C8m2fKOkqKq0nPlby8dtkggAK9Crr%2FKT8wvMU%2Fjyu8FPVPhq94m03sw21ERiOtXDLHd30eWV1XRlbNAyv2da0kN1TiNDIsl%2BZBiCGDC5zR9zXhaycRC9jyov4jBlN%2F%2BmeucCBo0leupkgAHG2OA1tqBFEVT8MtGPkbbWeTfxYvr52SeugrKfc7dsv0FbBFYzteU%2F0imakKbCDL5d4TMgGG9QdUGFduPi3nu0mnZiWoLTApr%2FBwV9G4bfSQnPu8KQGavoIxsIw2Mgx%2B6vYadVFwny5s9SllrRCArx3SUM28159633400202598539926429911960; __cas__rn__=539545490; bdindexid=1s5ci2sar6tc1qdalqfg3aevu5; Hm_lvt_d101ea4d2a5c67dab98251f0b5de24dc=1789533042,1791878383; Hm_lpvt_d101ea4d2a5c67dab98251f0b5de24dc=1791878383; __cas__st__212=9141b1c769eccb7f1a8411811c7be4b99c8dc2fe4f1ea0e184e0c17172465525ae648c444820b6ed282cd87a; __cas__id__212=43219807; CPTK_212=703663222; CPID_212=43219807; RT=\"z=1&dm=baidu.com&si=b8446b25-ab45-46ff-8d2c-cbd231dc1c4a&ss=mv6e4g5i&sl=13&tt=14rk&bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf\"; BDUSS_BFESS=mxCb0t6TUVwdjVsTklLZElhTlM5WFdjVmdIck53dUFZY1d0clk4REV-Mm1xNzFwSVFBQUFBJCQAAAAAAAAAAAEAAADD369xxM~H5cuutvkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKYelmmmHpZpY; ab_sr=1.0.1_NjYzMDI3NDY1MWM0ZTE5NmNlMGNhNmNkYzE2N2YzZDM3ZjA2MWRjOWNlOGE0Y2IxNDI1MmJmOTFhNTNiNWM3Mzk4YTI3ZTUxOTEwN2VhNWYyOWRkZWUxZDliZGJmNDkxYmY3MjkxOTE4ZGRmOWZkYmE4NWU1ZWZjMTY1NGFmYzk4YzgyM2UxODYyN2U0NGViYmVlYWIyYTJlZGFlN2U1Yw=="
-
-# 清洗 Cookie：去掉不可见字符，再转成 latin-1 安全的字节串
+COOKIES = "Your Baidu Search Index Cookie"
+# Cleaning Cookies: Remove invisible characters, then convert to latin-1 safe byte strings
 _clean = "".join(ch for ch in COOKIES if ch.isprintable() and ord(ch) < 128)
 COOKIES = _clean.encode("utf-8").decode("latin-1")
 
@@ -120,18 +118,18 @@ BATCHES_CORE = [
 ]
 
 # ============================================================
-# TIER 2  候选 / 补充    主信号跑完再逐批解开注释
-# 用于稳健性检验、母品牌对照、长尾车型覆盖
+# TIER 2 Candidates / Supplements Un-comment in batches after the main signals are run 
+# Used for robustness testing, parent brand comparison, and long-tail model coverage
 # ============================================================
 BATCHES_SUPPLEMENT = [
-    # 动力类型  同义/对照词  用来和主词做一致性检查
+    # Power Type  Synonyms/Contrast Words  Used to check consistency with the main term
     [
         ["混动车"],                        # 大混动 sanity check
         ["增程式混动和插电式混动的区别"],  # EREV 比较期搜索
         ["新能源汽车"],                    # NEV 正式写法对照
     ],
 
-    # 二线品牌  母品牌 + 华为系整体 + 子品牌
+    # Second-tier Brand  Parent Brand + Huawei Ecosystem Overall + Sub-brand
     [
         ["吉利"],
         ["奇瑞"],
@@ -144,7 +142,7 @@ BATCHES_SUPPLEMENT = [
         ["阿维塔"],
     ],
 
-    # 第二梯队车型  Top 20 其余 + EREV 中段 + 小鹏 MONA
+    # Second-tier models Top 20 Others + EREV mid-range + Xpeng MONA
     [
         ["Model 3"],
         ["比亚迪秦PLUS"],
@@ -161,7 +159,7 @@ BATCHES_SUPPLEMENT = [
     ],
 ]
 
-BATCHES = BATCHES_CORE + BATCHES_SUPPLEMENT  # 跑完核心后改成 BATCHES_CORE + BATCHES_SUPPLEMENT
+BATCHES = BATCHES_CORE + BATCHES_SUPPLEMENT  # Change it after finishing the core run: BATCHES_CORE + BATCHES_SUPPLEMENT
 
 DATE_RANGES = [
     ("2023-01-01", "2023-12-31"),
@@ -221,17 +219,17 @@ for batch in BATCHES:
     time.sleep(1.5)
 
 if not rows:
-    print("警告：本次未取到有效数据")
+    print("Warning: No valid data was retrieved this time")
 else:
     df = pd.DataFrame(rows)
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df = df.dropna(subset=["date"])
     df = df.sort_values(["keyword", "date"]).reset_index(drop=True)
 
-    # 日度原始表
+    # Daily Original Table
     df.to_excel("baidu_index_daily.xlsx", index=False)
 
-    # ---- 周度 rollup ----
+    # ---- weekly rollup ----
     df["iso_year"] = df["date"].dt.isocalendar().year.astype(int)
     df["iso_week"] = df["date"].dt.isocalendar().week.astype(int)
 
@@ -248,7 +246,8 @@ else:
 
     weekly["is_partial_week"] = weekly["days"] != 7
 
-    # month 归属：哪个月占这周 >= 4 天就归哪个月；边界周明确归属，避免后续 monthly aggregate 对不齐
+    # month Assignment: A week belongs to the month in which it has 4 or more days; 
+    # boundary weeks are clearly assigned to avoid misalignment in subsequent monthly aggregates.
     def _assign_month(row):
         dates = pd.date_range(row["week_start"], row["week_end"], freq="D")
         if len(dates) == 0:
@@ -260,7 +259,7 @@ else:
 
     weekly.to_excel("baidu_index_weekly.xlsx", index=False)
 
-    # ---- 月度 rollup：对齐 CPCA 面板 ----
+    # ---- monthly rollup：Align CPCA Panel ----
     df["month"] = df["date"].dt.to_period("M")
 
     monthly = (
@@ -274,7 +273,7 @@ else:
     monthly["month"] = monthly["month"].astype(str)
     monthly.to_excel("baidu_index_monthly.xlsx", index=False)
 
-    print("已导出：baidu_index_daily.xlsx / baidu_index_weekly.xlsx / baidu_index_monthly.xlsx")
+    print("Exported：baidu_index_daily.xlsx / baidu_index_weekly.xlsx / baidu_index_monthly.xlsx")
 
 # rows = []
 
@@ -296,7 +295,7 @@ else:
 #                 index_pc = idx.get("pc")
 #                 index_wise = idx.get("wise")
 #             else:
-#                 print("跳过：", item.get("keyword"), "index =", repr(idx))
+#                 print("Skip：", item.get("keyword"), "index =", repr(idx))
 #                 continue
 
 #             index_pc = item.get("index", {}).get("pc")
@@ -315,25 +314,25 @@ else:
 #                 }
 #             )
 
-#         # 控制频率，避免被限
+#         # Control the frequency to avoid being restricted
 #         time.sleep(1.2)
 
-#     # 每个 batch 之间再缓冲一下
+#     # Buffer a bit between each batch
 #     time.sleep(1.5)
 
 # if not rows:
-#     print("警告：本次未取到有效数据，请检查 Cookie、关键词或时间范围。")
-#     # raise RuntimeError("未取到数据，请检查 Cookie、关键词或时间范围。")
+#     print("Warning: No valid data was retrieved this time. Please check the cookie, keywords, or time range.")
+#     # raise RuntimeError("No data was retrieved, please check the cookie, keywords, or time range.")
 
 # df = pd.DataFrame(rows)
 # df["date"] = pd.to_datetime(df["date"])
 # df = df.dropna(subset=["date"])
 # df = df.sort_values(["keyword", "date"]).reset_index(drop=True)
 
-# # 日度原始表
+# # Daily Raw Table
 # df.to_excel("baidu_index_daily.xlsx", index=False)
 
-# # 周度 rollup：按 ISO 周聚合
+# # Weekly Rollup: Aggregated by ISO Week
 # df["year"] = df["date"].dt.isocalendar().year.astype(int)
 # df["week"] = df["date"].dt.isocalendar().week.astype(int)
 
@@ -353,7 +352,7 @@ else:
 
 # weekly.to_excel("baidu_index_weekly.xlsx", index=False)
 
-# # 月度 rollup：对齐 CPCA / CADA / 车值
+# # Monthly rollup: aligning CPCA / CADA / vehicle value
 # df["month"] = df["date"].dt.to_period("M")
 
 # monthly = (
@@ -372,4 +371,4 @@ else:
 # monthly["month"] = monthly["month"].astype(str)
 # monthly.to_excel("baidu_index_monthly.xlsx", index=False)
 
-# print("已导出：baidu_index_daily.xlsx / baidu_index_weekly.xlsx / baidu_index_monthly.xlsx")
+# print("Exported：baidu_index_daily.xlsx / baidu_index_weekly.xlsx / baidu_index_monthly.xlsx")
