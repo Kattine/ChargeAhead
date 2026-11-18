@@ -1,6 +1,9 @@
 # ChargeAhead
 
-Final project for AIPI 590 (Nov 2026). This repo keeps both the final handoff and the earlier midterm pipeline.
+ChargeAhead began with a car buyer’s concern: as the powertrain market changes, what could that mean for the car they own? 
+I built a data pipeline and tested whether search attention adds information about market changes. The final outcome is a working dashboard that shows both the market and the evidence behind the signal. The results are mixed, and the product makes that visible.
+
+Project for Alternative Data (Nov 2026). 
 
 ## Quick start
 
@@ -33,11 +36,7 @@ In this setup, adding the two broad search terms does not improve error.
 
 ## Final app
 
-The dashboard is static and local-only:
-
-- No login, backend, or live API
-- Data is embedded at build time
-- Refresh requires rerunning the pipeline
+The dashboard is running on local with three views:
 
 Rebuild steps:
 
@@ -51,7 +50,7 @@ python -m unittest discover -s tests -v
 ## Scope and limits
 
 - Source files are workbook extracts provided for coursework.
-- This repo checks internal reproducibility, not publisher authenticity or release-vintage history.
+- This repo checks internal reproducibility.
 - Wholesale and retail are reported separately and are not merged into one flow claim.
 - Results are retrospective checks, not preregistered proof.
 
@@ -65,6 +64,6 @@ python -m unittest discover -s tests -v
 - `archive/v1/`: previous version kept for audit only
 - `final_app/`: final offline dashboard
 
-## Final milestone notes
+The tool this repo delivered can analyze the market, compare forecasts, and check evidence. 
 
-Near-term priorities are still: source/vintage checks, a frozen incremental-signal test, and stronger brand-level outcome validation.
+Key Takeaway：A change in search popularity is different from it improving forecast accuracy.
