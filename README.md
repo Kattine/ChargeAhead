@@ -2,8 +2,7 @@
 
 ChargeAhead began with a car buyer’s concern: as the powertrain market changes, what could that mean for the car they own? 
 I built a data pipeline and tested whether search attention adds information about market changes. The final outcome is a working dashboard that shows both the market and the evidence behind the signal. The results are mixed, and the product makes that visible.
-
-Project for Alternative Data (Nov 2026). 
+ 
 
 ## Quick start
 
@@ -54,6 +53,12 @@ python -m unittest discover -s tests -v
 - Wholesale and retail are reported separately and are not merged into one flow claim.
 - Results are retrospective checks, not preregistered proof.
 
+## Acknowledgments
+
+Parts of the code in this repository were drafted and refined with assistance from copilot, and reviewed/tested by the author.
+
+
+
 ## Folder map
 
 - `src/analysis.py`: data prep + matched evaluation
@@ -67,3 +72,4 @@ python -m unittest discover -s tests -v
 The tool this repo delivered can analyze the market, compare forecasts, and check evidence. 
 
 Key Takeaway：A change in search popularity is different from it improving forecast accuracy.
+
